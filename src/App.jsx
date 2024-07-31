@@ -8,7 +8,7 @@ export const PageWithHeader = ({ children }) => (
 );
 
 export const App = () => (
-  <HashRouter basename={""}>
+  <HashRouter basename={}>
     <Suspense
       fallback={
         <PageWithHeader>
