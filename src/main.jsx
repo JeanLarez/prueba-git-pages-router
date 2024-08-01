@@ -1,21 +1,25 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import {App} from './App.jsx'
-import './index.css'
-import { createHashRouter, RouterProvider } from 'react-router-dom'
+import React from "react";
+import ReactDOM from "react-dom/client";
+// import { App } from "./App.jsx";
 
-const router = createHashRouter(
-  [
-    {
-      path:"*",
-      element:<App/>
+import "./index.css";
+import { createHashRouter, RouterProvider } from "react-router-dom";
+import { Layout } from "./general/Layout.jsx";
+import NavBar from "./components/Header.jsx";
 
-    }
-  ]
-)
+const router = createHashRouter([
+  {
+    path: "/",
+    element: (
+      <Layout>
+        <NavBar />
+      </Layout>
+    ),
+  },
+]);
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router}/>
-  </React.StrictMode>,
-)
+    <RouterProvider router={router} />
+  </React.StrictMode>
+);
